@@ -15,10 +15,10 @@ Modern Python SDK for integration with the Pagar.me payment gateway (v5).
 
 ```bash
 # Using uv
-uv add pagarme-py
+uv add pagarme-python-sdk
 
 # Using pip
-pip install pagarme-py
+pip install pagarme-python-sdk
 ```
 
 ## Quick Start

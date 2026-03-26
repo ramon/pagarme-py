@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pagarme-py"
+name = "pagarme-python-sdk"
 version = "0.1.0"
 description = "Modern Python SDK for Pagar.me API v5"
 readme = "README.md"
@@ -65,3 +65,6 @@ typeCheckingMode = "basic"
 testpaths = ["tests"]
 pythonpath = ["src"]
 asyncio_mode = "auto"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pagarme_py"]
