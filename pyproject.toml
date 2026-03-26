@@ -1,13 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "pagarme-py"
 version = "0.1.0"
-description = "SDK Python para a API Pagar.me"
+description = "Modern Python SDK for Pagar.me API v5"
 readme = "README.md"
+authors = [
+    { name = "Ramon", email = "ramon@example.com" }
+]
+maintainers = [
+    { name = "Pagar.me SDK Team", email = "sdk@pagar.me" }
+]
+keywords = ["pagarme", "payments", "sdk", "api", "gateway", "fintech"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Office/Business :: Financial",
+]
 requires-python = ">=3.13"
 dependencies = [
     "pydantic[email]>=2.0",
     "httpx>=0.24.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/pagarme/pagarme-python"
+Repository = "https://github.com/pagarme/pagarme-python"
+Issues = "https://github.com/pagarme/pagarme-python/issues"
+Documentation = "https://docs.pagar.me/"
 
 [project.optional-dependencies]
 dev = [
