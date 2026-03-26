@@ -1,0 +1,42 @@
+[project]
+name = "pagarme-py"
+version = "0.1.0"
+description = "SDK Python para a API Pagar.me"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pydantic[email]>=2.0",
+    "httpx>=0.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.3.0",
+    "pyright>=1.1.350",
+    "isort>=5.13.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-httpx>=0.30.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I", "N", "UP", "ANN", "S", "PT", "ARG", "PTH"]
+ignore = ["ANN101", "ANN102", "S101", "ANN401"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.pyright]
+include = ["src"]
+pythonVersion = "3.14"
+typeCheckingMode = "basic"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+asyncio_mode = "auto"
