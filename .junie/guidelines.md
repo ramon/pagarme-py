@@ -42,12 +42,13 @@ The source code must be organized under the `src/pagarme_py` directory:
    ```
 3. Run tests: `uv run pytest`.
 
-## 6. Git Commit Best Practices
+## 6. Git Commit and Tagging Best Practices
 - **Commit History**: The agent MUST commit changes as they are completed, following logical steps.
-- **Language**: Commit messages MUST be in English.
+- **Language**: Commit messages and tag messages MUST be in English.
 - **Style**: Use the Imperative mood in the subject line (e.g., "Add feature" instead of "Added feature").
-- **No Emoticons**: Do NOT use emojis or emoticons in commit messages.
-- **Co-authorship**: Always include Junie as a co-author using the `--trailer "Co-authored-by: Junie <junie@jetbrains.com>"` flag.
+- **No Emoticons**: Do NOT use emojis or emoticons in commit messages or tags.
+- **Tagging**: When creating a git tag, ALWAYS include a descriptive message using the `-m` flag (e.g., `git tag -a v0.1.0 -m "Release version 0.1.0"`).
+- **Co-authorship**: Always include Junie as a co-author using the `--trailer "Co-authored-by: Junie <junie@jetbrains.com>"` flag in commits.
 
 ## 7. API Reference
 Base the implementation on the official documentation: [Pagar.me API Reference](https://docs.pagar.me/reference/introdu%C3%A7%C3%A3o-1).
