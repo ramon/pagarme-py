@@ -50,5 +50,58 @@ The source code must be organized under the `src/pagarme_py` directory:
 - **Tagging**: When creating a git tag, ALWAYS include a descriptive message using the `-m` flag (e.g., `git tag -a v0.1.0 -m "Release version 0.1.0"`).
 - **Co-authorship**: Always include Junie as a co-author using the `--trailer "Co-authored-by: Junie <junie@jetbrains.com>"` flag in commits.
 
-## 7. API Reference
+## 7. Versioning and Release Process
+
+### Versioning Best Practices
+- **Semantic Versioning (SemVer)**: Follow [SemVer](https://semver.org/) rules (`MAJOR.MINOR.PATCH`).
+  - `MAJOR`: Incompatible API changes.
+  - `MINOR`: New functionality in a backwards compatible manner.
+  - `PATCH`: Backwards compatible bug fixes.
+- **Syncing Version**: The version MUST be consistent across:
+  - `pyproject.toml`: The source of truth for the package version.
+  - `CHANGELOG.md`: Must be updated with the version and release date.
+  - `src/pagarme_py/client.py`: The `User-Agent` string should reflect the current version.
+
+### Step-by-Step Release Guide
+To create a new version (e.g., `v0.1.3`):
+
+1.  **Update Version with `uv`**:
+    Use `uv version` to update `pyproject.toml` and synchronize `uv.lock`.
+    ```bash
+    uv version 0.1.3
+    ```
+    Alternatively, to bump automatically:
+    ```bash
+    uv version --bump patch
+    ```
+2.  **Update Source Code**:
+    Ensure the version in `src/pagarme_py/client.py` (User-Agent) matches the new version.
+3.  **Update Changelog**:
+    Add a new section in `CHANGELOG.md` for the version, detailing "Added", "Changed", and "Fixed" items.
+4.  **Verification**:
+    Run all tests and checks:
+    ```bash
+    uv run pytest
+    uv run ruff check .
+    uv run pyright
+    ```
+5.  **Commit Changes**:
+    Commit all release-related changes (pyproject.toml, uv.lock, CHANGELOG.md, client.py).
+    ```bash
+    git add .
+    git commit -m "Bump version to 0.1.3 and update CHANGELOG" --trailer "Co-authored-by: Junie <junie@jetbrains.com>"
+    ```
+6.  **Tagging**:
+    Create an annotated tag with a descriptive message:
+    ```bash
+    git tag -a v0.1.3 -m "Release version 0.1.3"
+    ```
+7.  **Build and Publish**:
+    Generate artifacts and publish to PyPI (manually or via CI/CD):
+    ```bash
+    uv build
+    # Publication is usually handled by GitHub Actions on release creation
+    ```
+
+## 8. API Reference
 Base the implementation on the official documentation: [Pagar.me API Reference](https://docs.pagar.me/reference/introdu%C3%A7%C3%A3o-1).
