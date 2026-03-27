@@ -14,12 +14,14 @@ async def test_create_card(httpx_mock: HTTPXMock) -> None:
         status_code=200,
         json={
             "id": "card_123",
+            "first_six_digits": "123456",
             "last_four_digits": "1234",
             "brand": "Visa",
             "holder_name": "Tony Stark",
             "exp_month": 12,
             "exp_year": 2030,
             "status": "active",
+            "type": "credit",
             "created_at": "2023-01-01T00:00:00Z",
             "updated_at": "2023-01-01T00:00:00Z"
         }
@@ -44,8 +46,10 @@ async def test_create_card(httpx_mock: HTTPXMock) -> None:
 
     card = await client.customers.create_card("cust_123", card_data)
     assert card.id == "card_123"
+    assert card.first_six_digits == "123456"
     assert card.last_four_digits == "1234"
     assert card.brand == "Visa"
+    assert card.type == "credit"
 
 @pytest.mark.asyncio
 async def test_create_card_with_token(httpx_mock: HTTPXMock) -> None:

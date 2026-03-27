@@ -22,7 +22,6 @@ class CardCreateRequest(BaseModel):
     brand: str | None = None
     token: str | None = None
     metadata: dict[str, Any] | None = None
-    options: dict[str, Any] | None = None
 
     @model_validator(mode="after")
     def validate_card_data(self) -> Self:
@@ -55,12 +54,15 @@ class CardResponse(BaseModel):
     """Card response from the PagarMe API."""
 
     id: str
+    first_six_digits: str | None = None
     last_four_digits: str | None = None
     brand: str
     holder_name: str | None = None
     exp_month: int
     exp_year: int
     status: str
+    type: str | None = None
+    label: str | None = None
     created_at: str
     updated_at: str
     billing_address: Address | None = None
