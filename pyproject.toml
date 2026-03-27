@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pagarme-python-sdk"
-version = "0.1.0"
+version = "0.1.2"
 description = "Modern Python SDK for Pagar.me API v5"
 readme = "README.md"
 authors = [

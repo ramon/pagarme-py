@@ -96,7 +96,7 @@ class PagarMeClient:
                 timeout=self.config.timeout,
                 headers={
                     "Content-Type": "application/json",
-                    "User-Agent": "PagarMe-Python-SDK/0.1.0",
+                    "User-Agent": "PagarMe-Python-SDK/0.1.2",
                 },
             )
         return self._client
