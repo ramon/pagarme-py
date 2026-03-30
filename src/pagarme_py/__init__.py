@@ -2,7 +2,7 @@
 Pagar.me Python SDK.
 """
 
-from pagarme_py.client import PagarMeClient
+from pagarme_py.client import PagarMeClient, PagarMeSyncClient
 from pagarme_py.exceptions import (
     PagarMeAPIError,
     PagarMeAuthenticationError,
@@ -12,6 +12,7 @@ from pagarme_py.exceptions import (
 
 __all__ = [
     "PagarMeClient",
+    "PagarMeSyncClient",
     "PagarMeError",
     "PagarMeAuthenticationError",
     "PagarMeValidationError",

@@ -23,6 +23,8 @@ pip install pagarme-python-sdk
 
 ## Quick Start
 
+### Asynchronous (Default)
+
 ```python
 import asyncio
 from pagarme_py import PagarMeClient
@@ -40,6 +42,26 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+```
+
+### Synchronous
+
+```python
+from pagarme_py import PagarMeSyncClient
+
+def main():
+    with PagarMeSyncClient(api_key="sk_test_...") as client:
+        # Create a customer
+        customer = client.customers.create({
+            "name": "Tony Stark",
+            "email": "tony@stark.com",
+            "document": "12345678909",
+            "type": "individual"
+        })
+        print(f"Created customer: {customer.id}")
+
+if __name__ == "__main__":
+    main()
 ```
 
 ## Technologies
