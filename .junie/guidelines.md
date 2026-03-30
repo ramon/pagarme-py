@@ -44,6 +44,8 @@ The source code must be organized under the `src/pagarme_py` directory:
 
 ## 6. Git Commit and Tagging Best Practices
 - **Commit History**: The agent MUST commit changes as they are completed, following logical steps.
+  - **MANDATORY**: Each logical task or sub-task MUST have its own commit. DO NOT wait until the end of the session to commit everything.
+  - Examples of logical steps: "Refactor base client", "Implement SyncCustomerResource", "Update tests for sync mode".
 - **Language**: Commit messages and tag messages MUST be in English.
 - **Style**: Use the Imperative mood in the subject line (e.g., "Add feature" instead of "Added feature").
 - **No Emoticons**: Do NOT use emojis or emoticons in commit messages or tags.
