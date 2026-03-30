@@ -132,7 +132,7 @@ class PagarMeSyncClient(BasePagarMeClient):
                 timeout=self.config.timeout,
                 headers={
                     "Content-Type": "application/json",
-                    "User-Agent": "PagarMe-Python-SDK/0.1.2",
+                    "User-Agent": "PagarMe-Python-SDK/0.2.0",
                 },
             )
         return self._client
@@ -226,7 +226,7 @@ class PagarMeClient(BasePagarMeClient):
                 timeout=self.config.timeout,
                 headers={
                     "Content-Type": "application/json",
-                    "User-Agent": "PagarMe-Python-SDK/0.1.2",
+                    "User-Agent": "PagarMe-Python-SDK/0.2.0",
                 },
             )
         return self._client
